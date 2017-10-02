@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="src/jquery-1.11.3.js"></script>
+    <script src="src/searchScript.js"></script>
+    <script src="src/jquery.textillate.js"></script>
+    <script src="src/jquery.lettering.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="src/animate.css" title="theme" />
+    <script src="src/jquery-ui.js"></script>
+    <link rel="stylesheet" href="src/jquery-ui.css">
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <meta charset="UTF-8">
+    <title>Resort</title>
+  </head>
+  <body>
+    <div id="wrapper">					<!--Div that wrapps around whole content-->
+      <div id="nav">
+       
+            <header>
+              <h4>Michal's Resort Search Engine</h4>
+            </header>
+            <div class="right_corner">
+            </div>
+      </div>
+       <div class="left_corner">
+          <div class="favourite">
+            Favourite List
+            <div class="favourite_list">
+              <div class="head">
+                <span class="name">Resort Name</span>
+              </div>
+              <ul></ul>
+            </div>
+          </div>
+        </div>
+      <div id="searchDiv">
+        <div class="destination">					<!-- this div holds all the buttons for destination	-->
+              <p>Please Choose Destination</p>
+              <label for="Carribean">Carribean</label>
+              <input type="radio" id="Carribean" name="destination" value="Carribean"/>
+              <label for="Indian Ocean">Indian Ocean</label>
+              <input type="radio" id="Indian Ocean" name="destination" value="Indian Ocean"/>
+              <label for="Europe">Europe</label>
+              <input type="radio" id="Europe" name="destination" value="Europe"/>
+              <label for="The Alps">The Alps</label>
+              <input type="radio" id="The Alps" name="destination" value="The Alps"/>
+              <label for="Africa">Africa</label>
+              <input type="radio" id="Africa" name="destination" value="Africa"/>
+              <label for="North and Central America">North and Central America</label>
+              <input type="radio" id="North and Central America" name="destination" value="North and Central America"/>
+              <label for="Asia">Asia</label>
+              <input type="radio" id="Asia" name="destination" value="Asia"/>
+              <label for="South America">South America</label>
+              <input type="radio" id="South America" name="destination" value="South America"/>
+              <label for="Any">Any</label>
+              <input type="radio" id="Any" name="destination" value="Any" checked/>
+        </div>
+       
+        
+        <div class="activities">							<!-- this div holds all the buttons to choose activities-->
+          <p>Activities</p>
+          <label for="water skiing"> Water Skiing </label>
+          <input type="checkbox" name="activities" id="water skiing" value="water skiing"/>
+          <label for="sailing">Sailing</label>
+          <input type="checkbox" name="activities" id="sailing" value="sailing"/>
+          <label for="tennis">Tennis</label>
+          <input type="checkbox" name="activities" id="tennis" value="tennis"/>
+          <label for="scuba diving">Scuba Diving</label>
+          <input type="checkbox" name="activities" id="scuba diving" value="scuba diving"/>
+          <label for="golf">Golf</label>
+          <input type="checkbox" name="activities" id="golf" value="golf"/>
+          <label for="hiking">Hiking</label>
+          <input type="checkbox" name="activities" id="hiking" value="hiking"/>
+          <label for="horse riding">Horse riding</label>
+          <input type="checkbox" name="activities" id="horse riding" value="horse riding"/>
+          <label for="spa">Spa</label>
+          <input type="checkbox" name="activities" id="spa" value="spa"/>
+        </div>
+        <br/>
+        
+        <div class="comfort">							<!-- this div holds all the buttons for comfort level -->
+          <p>Choose comfort level: </p>
+          <label for="3">Comfort 3 Stars</label>
+          <input type="radio" name="comfortLevel" id="3" value="3"/>
+          <label for="4">Premium 4 Stars</label>
+          <input type="radio" name="comfortLevel" id="4" value="4"/>
+          <label for="5">Luxury 5 Stars</label>
+          <input type="radio" name="comfortLevel" id="5" value="5"/>
+          <label for="AnyComfort">Any Comfort</label>
+          <input type="radio" name="comfortLevel" id="AnyComfort" value="AnyComfort" checked/>
+        </div>
+        <br/>
+        <p>
+          <label for="amount" id="amount_label">Maximum price:</label>
+          <input type="text" id="amount" readonly style="border:0;  font-weight:bold;">
+        </p>
+        <div class="slider">
+             
+        <div id="slider-range-min" ></div>					<!--div that holds a slider-->
+        </div>
+        <br/>
+        <div id="date">							<!--div that holds a date-->
+          <p>
+          	<label for="from" id="start_label">Start Date</label>
+            <input type="text" id="from" name="from">
+            <label for="to" id="end_label">End Date</label>
+            <input type="text" id="to" name="to">
+          </p>
+        </div>
+        <div class="search_list"><div class="searchbutton">
+        <button id="search" title="Click to display results.">Search</button>
+        </div>
+        
+        	<div class="list_button">
+                <label for="list">Show/Hide favourites List</label>				<!--Button created to show/hide list of favourites -->
+                <input type="checkbox" id="list" name="destination" value="list" />
+       		</div>
+          </div>
+          <section id="results">
+            	<div class="result_holder">					<!--result holder holds all the results of our search-->
+                	<div id="placeholder">
+                	</div>
+        		</div>
+          </section>
+      </div>
+    </div>
+    <script></script>
+  </body>
+</html>

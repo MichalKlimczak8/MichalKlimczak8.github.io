@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en"> 
+  <head> 
+    <meta charset="utf-8" />  
+   
+    <title id="title">resort1</title>  
+  
+    <link rel="stylesheet" type="text/css" href="src/style.css" title="theme" />  
+ 	<link rel="stylesheet" href="src/jquery-ui-resorts.css">
+  	<script src="src/jquery-1.11.3.js"></script>
+  	<script src="src/jquery-ui.js"></script>
+	<script src="searchres.js"></script>
+    <script src="gmaps.js"></script>
+    <script src="map.js"></script>
+    <script src="src/jquery.viewbox.min.js"></script>
+    <script src="src/jquery.cycle.all.js"></script>
+    <link rel="stylesheet" href="src/viewbox.css">
+    
+  </head>  
+  <body> 
+    <div class="wrapper" style="background-image:url(images/slide2.jpg)"> 
+    
+      <div class="ribbon-wrapper-green"><div class="ribbon-green" name="price"></div></div>
+      <div class="row"> 
+        <header class="container-top"> 
+         	<h1></h1>
+        </header> 
+      </div>  
+      <div class="row"> 
+        <div class="container" > 
+          <div class="banner"> 
+          <div class="ribbon-wrapper-comfort"><div class="ribbon-green-comfort" name="price"></div></div>
+            <div class="tagline"> 
+            
+              <h1></h1>
+              <h2></h2>  
+              <p></p>
+        
+           	</div> 
+            <div class="pic">
+                <img src="images/resort1/i3-thumb.jpg" width="200" height="200" alt="#"/>
+                <img src="images/resort1/i5-thumb.jpg" width="200" height="200" alt="#"/> 
+                <img src="images/resort1/i6-thumb.jpg" width="200" height="200" alt="#"/> 
+                <img src="images/resort1/i8-thumb.jpg" width="200" height="200" alt="#"/> 
+            </div>
+           
+          </div>  
+          <div class="page"> 
+            <div class="main"> 
+            <div id="tab">
+    <ul>
+     <li><a href="#tab-1">Description</a></li>
+    <li><a href="#tab-2">Accommodation</a></li>
+    <li><a href="#tab-3"  onclick="loadScript();">Map</a></li>
+    </ul>
+    <div id="tab-1">
+    <p></p>
+  </div>
+   <div id="tab-2">
+    <p>Airlie Beach accommodation at Les Boucaniers Resort is comprised of a range of hotel suites, superior apartments and luxury penthouses. All our accommodation Airlie Beach is serviced daily with the full range of facilities and inclusions expected of a boutique hotel of this quality and standard.</p>
+  </div>
+   <div id="tab-3">
+<div id ="map"></div>
+  </div>
+    </div> 
+    <br/>
+            <div id="accordion">
+
+ 
+  <h3>Activities</h3>
+  <div class ="activities">
+    <p></p>
+  </div>
+ 
+  <h3>Gallery</h3>
+   <div class="gallery" >
+             
+                <a href="images/resort1/i1.jpg" class="image-link" >
+                	<img src="images/resort1/i1-thumb.jpg" alt="">
+                </a>
+                <a href="images/resort1/i2.jpg" class="image-link" >
+                	<img src="images/resort1/i2-thumb.jpg" alt="">
+                </a>
+                <a href="images/resort1/i3.jpg" class="image-link" >
+                	<img src="images/resort1/i3-thumb.jpg" alt="">
+                </a>
+                <a href="images/resort1/i4.jpg" class="image-link" >
+                	<img src="images/resort1/i4-thumb.jpg" alt="">
+                </a>
+                <a href="images/resort1/i5.jpg" class="image-link" >
+                	<img src="images/resort1/i5-thumb.jpg" alt="">
+                </a>
+                 <a href="images/resort1/i6.jpg" class="image-link" >
+                	<img src="images/resort1/i6-thumb.jpg" alt="">
+                </a>
+                <a href="images/resort1/i7.jpg" class="image-link" >
+                	<img src="images/resort1/i7-thumb.jpg" alt="">
+                </a>
+                <a href="images/resort1/i8.jpg" class="image-link" >
+                	<img src="images/resort1/i8-thumb.jpg" alt="">
+                </a>
+               
+             
+          </div>  
+
+</div>
+
+	
+        		
+            
+       
+            </div>  
+         
+          <footer class="footer" > 
+             
+            <div class="content"> 
+              <p> 
+               Copyright - 2015 - Michal Klimczak | All Rights Reserved
+              </p>  
+               
+              <div> 
+                <ul class="social-links"> 
+                  <li> 
+                    <a href="#" rel="nofollow" style="background-image:url('images/facebook.png')">Be a fan on Facebook</a> 
+                  </li>  
+                  <li> 
+                    <a href="#" rel="nofollow" style="background-image:url('images/twitter.png')">Follow me on Twitter</a> 
+                  </li>  
+                 
+                  
+                </ul> 
+              </div> 
+            </div> 
+          </footer> 
+        </div> 
+      </div>  
+  
+   <div class="container-bottom"></div> 
+     
+    </div> 
+    </div>
+
+
+    
+
+<script>
+
+
+$(function(){
+	$('.image-link').viewbox();			/* plugin for displaying images (viewbox)*/
+});
+ $(function() {
+    $( "#tab" ).tabs({
+		show: function(event, ui){
+			if (ui.panel.id == 'tab-3' && $('map').is(':empty')) 
+			{
+				var mapOptions = {
+		center: new google.maps.LatLng(47.877222,-4.1046751),						/* function for displaying a map with given coordinates*/
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		zoom:13
+	};
+	var venueMap;
+	venueMap = new google.maps.Map(document.getElementById('map'),mapOptions);
+	
+}
+		}
+				
+		});
+  });
+
+
+  function init(){
+	var mapOptions = {
+		center: new google.maps.LatLng(47.877222,-4.1046751),
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		zoom:13
+	};
+	var venueMap;
+	venueMap= new google.maps.Map(document.getElementById('map'),mapOptions);
+	
+};
+function loadScript () {
+	var script = document.createElement ('script');
+	script.src = 'http://maps.googleapis.com/maps/api/js?sensor=false&callback=init';
+	document.body.appendChild(script);
+}
+	window.onload = loadScript;
+	
+	$("#tab-3").tabs({    	
+    			
+    		fx: { height: 'toggle', opacity: 'toggle'},
+    		show: function(event, ui) {
+    			  if (ui.panel.id == "map") {
+    				  $(ui.panel).css("height","100%")
+        			initialize()
+    				}}
+    		});
+	
+
+
+</script>
+  </body> 
+</html>
